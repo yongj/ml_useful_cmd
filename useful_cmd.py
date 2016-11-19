@@ -88,5 +88,6 @@ colors = [colors_palette[c] for c in y]
 pd.tools.plotting.scatter_matrix(X_df,c=colors,diagonal='kde')     # 'kde','hist'
 pd.tools.plotting.scatter_matrix(X_df,c=colors,diagonal='kde',alpha=0.2,figsize=(15, 15)) 
 X_df.boxplot()
-X_df.hist()
+X_df.hist() 
+ 
 
