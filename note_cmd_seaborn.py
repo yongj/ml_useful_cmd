@@ -56,3 +56,6 @@ sns.countplot(data=titanic, y="deck", color="c");
 sns.factorplot(data=tips, x="day", y="total_bill",col="time", kind="box");
 sns.factorplot(data=tips, x="day", y="total_bill", row="sex", col="time", kind="box");
 sns.factorplot(data=tips, x="day", y="total_bill", row="sex", col="time");
+# Examples of using different color pallette. 
+# ref: http://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette
+sns.factorplot(data=df2, x="Sqz Idx", y="SFR OTRC", row="Head", col="Sub-Test ID", hue="Zone", palette="muted");
