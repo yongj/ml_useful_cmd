@@ -1,0 +1,22 @@
+activate gl-env
+
+git status
+git add -A
+git commit -m "Initialize repository"
+git push origin master
+
+
+git pull origin master
+
+
+
+
+
+
+
+
+
+
+git init
+git push -u origin --all
+git remote add origin https://bitbucket.org/yong_jiang/hello_app.git
