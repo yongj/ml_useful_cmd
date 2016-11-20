@@ -139,3 +139,57 @@ by_dept.mean()
 by_dept.median()
 
 ################################### Plotting in pandas ########################
+# ref: http://pandas.pydata.org/pandas-docs/stable/visualization.html#visualization
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.style.use('ggplot')
+
+# basic plotting
+ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
+ts = ts.cumsum()
+ts.plot()
+
+df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=list('ABCD'))
+df = df.cumsum()
+df.plot();
+
+df.plot(colormap='Accent')       # define colormap. see color map definition here:http://scipy.github.io/old-wiki/pages/Cookbook/Matplotlib/Show_colormaps
+
+# plot A vs B
+df3 = pd.DataFrame(np.random.randn(1000, 2), columns=['B', 'C']).cumsum()
+df3['A'] = pd.Series(list(range(len(df))))
+df3.plot(x='A', y='B')
+
+# scatter plot
+df.plot.scatter(x='A',y='B')        # similar to seaborn cmd: sns.jointplot(x="A", y="B", data=df);
+# use c to define color
+df.plot.scatter(x='a', y='b', c='c', s=50);
+
+# scatter matrix
+from pandas.tools.plotting import scatter_matrix
+df = pd.DataFrame(np.random.randn(1000, 4), columns=['a', 'b', 'c', 'd'])
+scatter_matrix(df, alpha=0.2, figsize=(6, 6), diagonal='kde')   # similar to seaborn cmd: sns.pairplot(df)
+
+# histograms
+df.plot.hist()
+df.plot.hist(bins = 20)
+df.plot.hist(stacked=True,bins = 20)
+
+df.hist() # plot columns on multiple subplots
+
+# histograms grouped by another serires
+data = pd.Series(np.random.randn(1000))
+data.hist(by=np.random.randint(0, 4, 1000), figsize=(6, 4))
+
+# box plot
+df.plot.box()
+
+data = pd.DataFrame(np.random.rand(10,2), columns=['Col1', 'Col2'] )
+data['X'] = pd.Series(['A','A','A','A','A','B','B','B','B','B'])
+data.boxplot(by='X')
+
+# subplots
+df.plot(subplots=True, layout=(2, 3), figsize=(6, 6), sharex=False);
+df.plot.hist(subplots=True, layout=(2, 3), figsize=(6, 6), sharex=False);
