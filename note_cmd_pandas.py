@@ -31,6 +31,10 @@ cities[0:3]     # by range
 cities[:3]
 cities[3:]
 
+############################## work with numpy array ######################
+temp = df.as_matrix()
+x = temp[:,0:27]
+
 ############################# Create data frames ##############################
 # Build data frames from dictionary of list
 data = {'year': [2010, 2011, 2012, 2011, 2012, 2010, 2011, 2012],
@@ -88,6 +92,7 @@ users.reset_index(inplace=True) # reset index. may be needed when joining
 # select multiple rows: Use loc for label-based indexing and iloc for positional indexing
 df2.iloc[1:5]
 df2.iloc[[1,3,5]]
+df.iloc[:,1:3]      # select both rows and columns
 
 # selecting columns
 df2.Head

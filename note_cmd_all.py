@@ -26,7 +26,10 @@ elapsed = datetime.now() - start
 print(start)
 print(elapsed)
 
-################################### load data set #############################
+################################### load data set ############################
+import pandas as pd
+df = pd.read_csv(myPath+fileName)
+
 from sklearn import datasets
 # Iris data set
 iris = datasets.load_iris()
@@ -89,5 +92,9 @@ pd.tools.plotting.scatter_matrix(X_df,c=colors,diagonal='kde')     # 'kde','hist
 pd.tools.plotting.scatter_matrix(X_df,c=colors,diagonal='kde',alpha=0.2,figsize=(15, 15)) 
 X_df.boxplot()
 X_df.hist() 
- 
+
+
+import seaborn as sns
+sns.jointplot(x="x", y="y", data=df); 
+sns.pairplot(iris, hue="species", palette="husl")
 
