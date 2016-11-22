@@ -14,6 +14,7 @@ myPath = 'C:/Users/jiang_y/Documents/MachineLearning/Scripts/Data/Faults/'
 fileName = 'faults.csv'
 
 df = pd.read_csv(myPath+fileName,header=None)
+df = pd.read_csv(fileName,header=None)
 temp = df.as_matrix()
 X = temp[:,0:27]
 y = temp[:,27]

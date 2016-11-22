@@ -87,6 +87,7 @@ df2[2:6]
 df2[2:]
 df2[:6]
 
+df = df.reset_index(drop=True)
 users.reset_index(inplace=True) # reset index. may be needed when joining
 
 # select multiple rows: Use loc for label-based indexing and iloc for positional indexing
