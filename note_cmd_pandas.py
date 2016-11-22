@@ -35,6 +35,13 @@ cities[3:]
 temp = df.as_matrix()
 x = temp[:,0:27]
 
+############################## work with list ############################
+k_range = list(range(1, 31))
+k_scores = []
+for k in range(1,31):
+    ... your own code ...
+    k_scores.append(scores.mean())
+
 ############################# Create data frames ##############################
 # Build data frames from dictionary of list
 data = {'year': [2010, 2011, 2012, 2011, 2012, 2010, 2011, 2012],
@@ -72,6 +79,11 @@ url = 'https://raw.github.com/gjreda/best-sandwiches/master/data/best-sandwiches
 # fetch the text from the URL and read it into a DataFrame
 from_url = pd.read_table(url, sep='\t')
 from_url.head(3)
+
+# read from UCI repository
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data'
+col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
+pima = pd.read_csv(url, header=None, names=col_names)
 
 ################################## Work with data frames #######################################
 # overview
