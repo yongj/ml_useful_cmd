@@ -26,9 +26,20 @@ elapsed = datetime.now() - start
 print(start)
 print(elapsed)
 
+
+# system operations
+import os
+os.getcwd()
+
+mypath = 'C:/Users/jiang_y/Documents/MachineLearning/DataSchool/pycon-2016-tutorial-master/'
+os.chdir(mypath)
+
 ################################### load data set ############################
 import pandas as pd
 df = pd.read_csv(myPath+fileName)
+
+url = 'https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/sms.tsv'
+sms = pd.read_table(url, header=None, names=['label', 'message'])
 
 from sklearn import datasets
 # Iris data set
@@ -45,6 +56,9 @@ y = digits.target
 m=len(X)
 
 pd.DataFrame(X).describe()
+
+# convert label to a numerical variable
+sms['label_num'] = sms.label.map({'ham':0, 'spam':1})
 
 # split data set for cross validation
 from sklearn.cross_validation import train_test_split
@@ -70,6 +84,9 @@ print("\tPrecision: %1.3f" % precision_score(y_test, y_pred))
 print("\tRecall: %1.3f" % recall_score(y_test, y_pred))
 print("\tF1: %1.3f\n" % f1_score(y_test, y_pred))
 
+from sklearn import metrics
+metrics.accuracy_score(y_test, y_pred_class)
+metrics.confusion_matrix(y_test, y_pred_class)      # print the confusion matrix
 
 ######################### Plotting ###########################
 %matplotlib qt          # plot in new window, use this in script: get_ipython().run_line_magic('matplotlib', 'qt'). Need to run "from IPython import get_ipython"

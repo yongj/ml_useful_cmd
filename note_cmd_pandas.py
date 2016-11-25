@@ -93,6 +93,10 @@ df2.head()
 df2.tail()
 df2.dtypes
 df2.shape
+df2.label.counts()
+
+# convert label to a numerical variable
+sms['label_num'] = sms.label.map({'ham':0, 'spam':1})
 
 # slicing
 df2[2:6]
