@@ -78,6 +78,12 @@ print('KNN score: %f' % knn.fit(X_train, y_train).score(X_test, y_test))
 logistic = linear_model.LogisticRegression()
 print('LogisticRegression score: %f' % logistic.fit(X_train, y_train).score(X_test, y_test))
 
+# import and instantiate a Multinomial Naive Bayes model
+from sklearn.naive_bayes import MultinomialNB
+nb = MultinomialNB()
+# train the model using X_train_dtm (timing it with an IPython "magic command")
+%time nb.fit(X_train_dtm, y_train)
+
 # scores
 print("\tBrier: %1.3f" % (clf_score))
 print("\tPrecision: %1.3f" % precision_score(y_test, y_pred))

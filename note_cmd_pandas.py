@@ -94,6 +94,7 @@ df2.tail()
 df2.dtypes
 df2.shape
 df2.label.counts()
+df.sample(5)        # random pick 5 samples
 
 # convert label to a numerical variable
 sms['label_num'] = sms.label.map({'ham':0, 'spam':1})
