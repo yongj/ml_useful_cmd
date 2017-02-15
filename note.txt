@@ -10,13 +10,32 @@ git pull origin master
 
 
 
-
-
-
-
-
-
-
 git init
 git push -u origin --all
 git remote add origin https://bitbucket.org/yong_jiang/hello_app.git
+
+spyder --new-instance
+
+pip install --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-0.12.0rc0-cp35-cp35m-win_amd64.whl
+pip install --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-0.12.0rc1-cp35-cp35m-win_amd64.whl
+
+tensorboard --logdir=C:/tmp/
+
+
+C:\cygwin64\home\jiang_y
+
+C:\Users\jiang_y\.keras
+
+pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+
+git clone https://github.com/fastai/courses.git
+
+
+C:\cygwin64\home\jiang_y\.ssh
+chmod 400 /home/jiang_y/.ssh/YongkeypairforCS231.pem
+ssh -i /home/jiang_y/.ssh/YongkeypairforCS231.pem ubuntu@ec2-54-215-144-58.us-west-1.compute.amazonaws.com
+ssh -i /home/jiang_y/.ssh/aws-key-fast-ai.pem ubuntu@ec2-54-215-144-58.us-west-1.compute.amazonaws.com
+
+
+cs231n
+ami-f8fd5998

@@ -4,6 +4,8 @@ Created on Thu Nov 17 08:28:39 2016
 
 @author: jiang_y
 """
+python --version # need to issue in cmd window
+
 ################################## Modules ####################################
 # Important Module
 import numpy as np
