@@ -4,11 +4,18 @@ Created on Wed Feb 15 08:31:52 2017
 
 @author: jiang_y
 """
+##################### Data Preprecessing #######################
+# Ref: https://keras.io/preprocessing/image/
+from keras.preprocessing import image
+gen=image.ImageDataGenerator()
+gen.flow_from_directory(dirname, target_size=(224,224), class_mode='categorical', shuffle=True, batch_size=4)
 
 val_batches = get_batches(path+'valid', shuffle=False, batch_size=1)
 filenames = val_batches.filenames
 val_classes = val_batches.classes
 
+
+##################### Models #######################
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
