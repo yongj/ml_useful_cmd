@@ -10,6 +10,8 @@ Created on Wed Jan 25 08:15:25 2017
 ###################### General #########################
 os?
 os??
+?os
+??os
 os.getcwd?
 os.getcwd??
 
